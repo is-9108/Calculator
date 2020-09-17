@@ -843,6 +843,12 @@
                                     <constraint firstAttribute="height" constant="50" id="gxo-cU-Hk6"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ztQ-Ku-4yc">
+                                <rect key="frame" x="30" y="60" width="315" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -853,12 +859,15 @@
                             <constraint firstItem="MQq-N5-hi7" firstAttribute="leading" secondItem="Ylp-yl-JTv" secondAttribute="leading" constant="30" id="IZD-EB-jmG"/>
                             <constraint firstItem="ktS-z0-Ulw" firstAttribute="leading" secondItem="Ylp-yl-JTv" secondAttribute="leading" constant="30" id="KbF-Df-4qZ"/>
                             <constraint firstItem="NWY-H1-Deb" firstAttribute="centerX" secondItem="VUU-w7-uQO" secondAttribute="centerX" id="Ki8-U6-fAx"/>
+                            <constraint firstItem="ztQ-Ku-4yc" firstAttribute="leading" secondItem="Ylp-yl-JTv" secondAttribute="leading" constant="30" id="MVs-Zr-yMM"/>
                             <constraint firstItem="MU8-gc-uWP" firstAttribute="leading" secondItem="Ylp-yl-JTv" secondAttribute="leading" constant="30" id="NAy-cx-zVS"/>
                             <constraint firstItem="NWY-H1-Deb" firstAttribute="top" secondItem="t7J-an-YJM" secondAttribute="bottom" constant="40" id="OqP-7R-ikC"/>
                             <constraint firstItem="MU8-gc-uWP" firstAttribute="top" secondItem="Ylp-yl-JTv" secondAttribute="top" id="XYz-og-JpO"/>
+                            <constraint firstItem="Ylp-yl-JTv" firstAttribute="trailing" secondItem="ztQ-Ku-4yc" secondAttribute="trailing" constant="30" id="fE2-fa-RoI"/>
                             <constraint firstItem="nAs-vt-bQR" firstAttribute="top" secondItem="MQq-N5-hi7" secondAttribute="bottom" constant="40" id="g7Y-gY-SaK"/>
                             <constraint firstItem="t7J-an-YJM" firstAttribute="centerX" secondItem="VUU-w7-uQO" secondAttribute="centerX" id="gkr-f1-9gZ"/>
                             <constraint firstItem="t7J-an-YJM" firstAttribute="top" secondItem="nAs-vt-bQR" secondAttribute="bottom" constant="40" id="iBI-fH-LhQ"/>
+                            <constraint firstItem="ztQ-Ku-4yc" firstAttribute="top" secondItem="MU8-gc-uWP" secondAttribute="bottom" constant="10" id="kts-IY-Qji"/>
                             <constraint firstItem="ktS-z0-Ulw" firstAttribute="bottom" secondItem="Ylp-yl-JTv" secondAttribute="bottom" id="lpf-cU-f31"/>
                             <constraint firstItem="Ylp-yl-JTv" firstAttribute="bottom" secondItem="NWY-H1-Deb" secondAttribute="bottom" constant="200" id="qOZ-Df-GmF"/>
                         </constraints>
@@ -868,7 +877,8 @@
                     <connections>
                         <outlet property="bannerView1" destination="MU8-gc-uWP" id="Ts0-Y2-7ix"/>
                         <outlet property="bannerView2" destination="ktS-z0-Ulw" id="HhA-4E-81O"/>
-                        <outlet property="label" destination="MQq-N5-hi7" id="OIn-vB-889"/>
+                        <outlet property="processLabel" destination="ztQ-Ku-4yc" id="IQR-Pi-NLv"/>
+                        <outlet property="resultLabel" destination="MQq-N5-hi7" id="kbo-Mv-EuR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a3B-bQ-j1M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
