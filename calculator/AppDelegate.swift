@@ -4,7 +4,7 @@
 //
 //  Created by Shota Ishii on 2020/04/11.
 //  Copyright © 2020 is. All rights reserved.
-//
+// 
 
 import UIKit
 import GoogleMobileAds
