@@ -11,24 +11,22 @@ import GoogleMobileAds
 
 class SixteenViewController: UIViewController {
     
-    @IBOutlet weak var label: UILabel!
+    
+    @IBOutlet weak var resultLabel: UILabel!
+    
+    @IBOutlet weak var processLabel: UILabel!
     
     @IBOutlet weak var bannerView1: GADBannerView!
     
     @IBOutlet weak var bannerView2: GADBannerView!
     
     
-    var sum1 = ""
-    var sum2 = 0
-    var sum3 = 0
-    
-    var suma = 0
-    var sumb = 0
-    var sumc = ""
-    
-    var cal = ""
-    
-    var start = false
+    //計算
+    var firstInteger = 0
+    var resultInteger = 0
+    var process = ""
+    var mode = true
+    var ope = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,209 +42,336 @@ class SixteenViewController: UIViewController {
     }
     
     @IBAction func fifteen(_ sender: Any) {
-        if start == false{
-            label.text = ""
+        if mode {
+            if resultLabel.text == "0" {
+                resultLabel.text = "f"
+            }else {
+                resultLabel.text! += "f"
+            }
+        }else{
+            resultLabel.text! = "f"
+            mode = true
         }
-        label.text! += "F"
-        start = true
     }
     
     @IBAction func fourteen(_ sender: Any) {
-        if start == false{
-            label.text = ""
+        if mode {
+            if resultLabel.text == "0" {
+                resultLabel.text = "e"
+            }else {
+                resultLabel.text! += "e"
+            }
+        }else{
+            resultLabel.text! = "e"
+            mode = true
         }
-        label.text! += "E"
-        start = true
     }
     
     @IBAction func threeteen(_ sender: Any) {
-        if start == false{
-            label.text = ""
+        if mode {
+            if resultLabel.text == "0" {
+                resultLabel.text = "d"
+            }else {
+                resultLabel.text! += "d"
+            }
+        }else{
+            resultLabel.text! = "d"
+            mode = true
         }
-        label.text! += "D"
-        start = true
     }
     
     @IBAction func twelve(_ sender: Any) {
-        if start == false{
-            label.text = ""
+        if mode {
+            if resultLabel.text == "0" {
+                resultLabel.text = "c"
+            }else {
+                resultLabel.text! += "c"
+            }
+        }else{
+            resultLabel.text! = "c"
+            mode = true
         }
-        label.text! += "C"
-        start = true
     }
     
     @IBAction func eleven(_ sender: Any) {
-        if start == false{
-            label.text = ""
+        if mode {
+            if resultLabel.text == "0" {
+                resultLabel.text = "b"
+            }else {
+                resultLabel.text! += "b"
+            }
+        }else{
+            resultLabel.text! = "b"
+            mode = true
         }
-        label.text! += "B"
-        start = true
     }
     
     @IBAction func ten(_ sender: Any) {
-        if start == false{
-            label.text = ""
+        if mode {
+            if resultLabel.text == "0" {
+                resultLabel.text = "a"
+            }else {
+                resultLabel.text! += "a"
+            }
+        }else{
+            resultLabel.text! = "a"
+            mode = true
         }
-        label.text! += "A"
-        start = true
     }
     
     @IBAction func nine(_ sender: Any) {
-        if start == false{
-            label.text = ""
+        if mode {
+            if resultLabel.text == "0" {
+                resultLabel.text = "9"
+            }else {
+                resultLabel.text! += "9"
+            }
+        }else{
+            resultLabel.text! = "9"
+            mode = true
         }
-        label.text! += "9"
-        start = true
     }
     
     @IBAction func eight(_ sender: Any) {
-        if start == false{
-            label.text = ""
+        if mode {
+            if resultLabel.text == "0" {
+                resultLabel.text = "8"
+            }else {
+                resultLabel.text! += "8"
+            }
+        }else{
+            resultLabel.text! = "8"
+            mode = true
         }
-        label.text! += "8"
-        start = true
     }
     
     @IBAction func seven(_ sender: Any) {
-        if start == false{
-            label.text = ""
+        if mode {
+            if resultLabel.text == "0" {
+                resultLabel.text = "7"
+            }else {
+                resultLabel.text! += "7"
+            }
+        }else{
+            resultLabel.text! = "7"
+            mode = true
         }
-        label.text! += "7"
-        start = true
     }
     
     @IBAction func six(_ sender: Any) {
-        if start == false{
-            label.text = ""
+        if mode {
+            if resultLabel.text == "0" {
+                resultLabel.text = "6"
+            }else {
+                resultLabel.text! += "6"
+            }
+        }else{
+            resultLabel.text! = "6"
+            mode = true
         }
-        label.text! += "6"
-        start = true
     }
     
     @IBAction func five(_ sender: Any) {
-        if start == false{
-            label.text = ""
+        if mode {
+            if resultLabel.text == "0" {
+                resultLabel.text = "5"
+            }else {
+                resultLabel.text! += "5"
+            }
+        }else{
+            resultLabel.text! = "5"
+            mode = true
         }
-        label.text! += "5"
-        start = true
     }
     
     @IBAction func four(_ sender: Any) {
-        if start == false{
-            label.text = ""
+        if mode {
+            if resultLabel.text == "0" {
+                resultLabel.text = "4"
+            }else {
+                resultLabel.text! += "4"
+            }
+        }else{
+            resultLabel.text! = "4"
+            mode = true
         }
-        label.text! += "4"
-        start = true
     }
     
     @IBAction func three(_ sender: Any) {
-        if start == false{
-            label.text = ""
+        if mode {
+            if resultLabel.text == "0" {
+                resultLabel.text = "3"
+            }else {
+                resultLabel.text! += "3"
+            }
+        }else{
+            resultLabel.text! = "3"
+            mode = true
         }
-        label.text! += "3"
-        start = true
     }
     
     @IBAction func two(_ sender: Any) {
-        if start == false{
-            label.text = ""
+        if mode {
+            if resultLabel.text == "0" {
+                resultLabel.text = "2"
+            }else {
+                resultLabel.text! += "2"
+            }
+        }else{
+            resultLabel.text! = "2"
+            mode = true
         }
-        label.text! += "2"
-        start = true
     }
     
     @IBAction func one(_ sender: Any) {
-        if start == false{
-            label.text = ""
+        if mode {
+            if resultLabel.text == "0" {
+                resultLabel.text = "1"
+            }else {
+                resultLabel.text! += "1"
+            }
+        }else{
+            resultLabel.text! = "1"
+            mode = true
         }
-        label.text! += "1"
-        start = true
     }
     
     @IBAction func zero(_ sender: Any) {
-        if start == false{
-            label.text = ""
+        if mode {
+            if resultLabel.text == "0" {
+                resultLabel.text = "0"
+            }else {
+                resultLabel.text! += "0"
+            }
+        }else{
+            resultLabel.text! = "0"
+            mode = true
         }
-        label.text! += "0"
-        start = true
+    }
+    
+    func tenToSixteen(number:Int) -> String{
+        let result = String(number, radix: 16)
+        return String(result)
+    }
+    
+    func sixteenToTen(number:String) -> String{
+        let result = (Int(number, radix: 16))!
+        
+        return String(result)
+        
     }
     
     
-    func sixteenToTen1(string:String){
-        suma = Int(string,radix: 16)!
-    }
-    func sixteenToTen2(string:String){
-        sumb = Int(string,radix: 16)!
-    }
-    
-    func tenToSixteen(int:Int){
-        sumc = String(int,radix: 16)
-    }
     
     @IBAction func equal(_ sender: Any) {
-        sixteenToTen1(string: sum1)
-        sixteenToTen2(string: label.text!)
-        if cal == "plus"{
-            sum2 = suma + sumb
-            tenToSixteen(int: sum2)
-        }else if cal == "minus"{
-            sum2 = suma - sumb
-            tenToSixteen(int: sum2)
-        }else if cal == "mul"{
-            sum2 = suma * sumb
-            tenToSixteen(int: sum2)
-        }else if cal == "div"{
-            sum2 = suma / sumb
-            tenToSixteen(int: sum2)
-        }else{
-            label.text = "\(sum1)"
-        }
-        label.text = "\(sumc)"
+        mode = false
+        calculation()
+        firstInteger = 0
     }
     
     @IBAction func plus(_ sender: Any) {
-        cal = "plus"
-        sum1 = label.text!
-        label.text = "0"
-        start = false
+        if resultLabel.text != "0"{
+            calculation()
+        }
+        ope = "+"
+
+        mode = false
     }
     
     @IBAction func minus(_ sender: Any) {
-        cal = "minus"
-        sum1 = label.text!
-        label.text = "0"
-        start = false
+        if resultLabel.text != "0"{
+            calculation()
+        }
+        ope = "-"
+
+        mode = false
     }
     
     @IBAction func mul(_ sender: Any) {
-        cal = "mul"
-        sum1 = label.text!
-        label.text = "0"
-        start = false
+        if resultLabel.text != "0"{
+            calculation()
+        }
+        ope = "×"
+
+        mode = false
     }
     
     @IBAction func div(_ sender: Any) {
-        cal = "div"
-        sum1 = label.text!
-        label.text = "0"
-        start = false
+        if resultLabel.text != "0"{
+            calculation()
+        }
+        ope = "÷"
+
+        mode = false
     }
     
     @IBAction func cansel(_ sender: Any) {
-        sum1 = ""
-        sum2 = 0
-        suma = 0
-        sumb = 0
-        sumc = ""
-        label.text = "0"
-        start = false
+        resultLabel.text = "0"
+        firstInteger = 0
+        process = ""
+        processLabel.text = ""
+        ope = ""
+        mode = true
     }
     
+    func calculation(){
+        var result = ""
+        var resultNumber = ""
+        
+        result = sixteenToTen(number: resultLabel.text!)
+        print(result)
+        switch ope {
+        case "":
+            process = resultLabel.text!
+            processLabel.text = process
+            firstInteger += Int(result)!
+        case "+":
+            if resultLabel.text == "0"{
+                process += resultLabel.text!
+            }else{
+                process += "+\(resultLabel.text!)"
+            }
+            processLabel.text = process
+            firstInteger += Int(result)!
+        case "-":
+            if resultLabel.text == "0"{
+                process += resultLabel.text!
+            }else{
+                process += "-\(resultLabel.text!)"
+            }
+            processLabel.text = process
+            mode = false
+            firstInteger -= Int(result)!
+        case "×":
+            if resultLabel.text == "0"{
+                process += resultLabel.text!
+            }else{
+                process += "×\(resultLabel.text!)"
+            }
+            processLabel.text = process
+            mode = false
+            firstInteger *= Int(result)!
+        case "÷":
+            if resultLabel.text == "0"{
+                process += resultLabel.text!
+            }else{
+                process += "÷\(resultLabel.text!)"
+            }
+            processLabel.text = process
+            mode = false
+            firstInteger /= Int(result)!
+        default:
+            print("演算子でのエラー")
+        }
+        resultNumber = tenToSixteen(number: firstInteger)
+        resultLabel.text = resultNumber
+        
+    }
 
     
     @IBAction func change(_ sender: Any) {
         let change = storyboard?.instantiateViewController(withIdentifier: "Change10") as! Change10ViewController
-        change.sumString = label.text!
+        change.sumString = resultLabel.text!
         change.version = "16"
         present(change,animated: true,completion: nil)
     }
