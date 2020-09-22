@@ -256,7 +256,6 @@ class SixteenViewController: UIViewController {
     
     func sixteenToTen(number:String) -> String{
         let result = (Int(number, radix: 16))!
-        
         return String(result)
         
     }

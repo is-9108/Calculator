@@ -1064,10 +1064,10 @@
                     <connections>
                         <outlet property="bannerView1" destination="FNV-k3-Jp9" id="E46-cz-r14"/>
                         <outlet property="bannerView2" destination="pZY-us-DCK" id="XOS-Ov-c1B"/>
-                        <outlet property="eight" destination="1XZ-rD-ZhV" id="mDP-4I-q0N"/>
-                        <outlet property="sixteen" destination="9Ml-Ae-wR3" id="OB7-54-rNa"/>
-                        <outlet property="ten" destination="RbJ-26-3Cr" id="UXn-6t-Mb8"/>
-                        <outlet property="two" destination="gA1-mw-aLk" id="dJL-2Q-7en"/>
+                        <outlet property="binaryLabel" destination="gA1-mw-aLk" id="iV8-sV-R6x"/>
+                        <outlet property="decimalLabel" destination="RbJ-26-3Cr" id="ihJ-eu-n8m"/>
+                        <outlet property="hexadecimalLabel" destination="9Ml-Ae-wR3" id="It6-Rd-BNr"/>
+                        <outlet property="octalLabel" destination="1XZ-rD-ZhV" id="Fcq-nh-3Bb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eFe-JQ-cC8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

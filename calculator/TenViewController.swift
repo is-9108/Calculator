@@ -231,7 +231,20 @@ class TenViewController: UIViewController {
     
     @IBAction func change(_ sender: Any) {
         let change = storyboard?.instantiateViewController(withIdentifier: "Change10") as! Change10ViewController
-        change.sumString = resultLabel.text!
+        let resultDouble = Double(resultLabel.text!)!
+        let integerNumber = Int(resultDouble)
+        print(integerNumber)
+        if (resultLabel.text!.contains(".")){
+            let alert: UIAlertController = UIAlertController(title: "申し訳ありません", message: "小数点以下の数字の変換には対応していません", preferredStyle: UIAlertController.Style.alert)
+            let confimAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {
+                (action: UIAlertAction) -> Void in
+                print("ok")
+                return
+            })
+            alert.addAction(confimAction)
+            present(alert,animated: true, completion: nil)
+        }
+        change.sumString = String(integerNumber)
         change.version = "10"
         present(change,animated: true,completion: nil)
     }

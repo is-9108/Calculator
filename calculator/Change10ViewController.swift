@@ -11,28 +11,22 @@ import GoogleMobileAds
 
 class Change10ViewController: UIViewController {
     
-    @IBOutlet weak var two: UILabel!
+    @IBOutlet weak var binaryLabel: UILabel!
     
-    @IBOutlet weak var eight: UILabel!
+    @IBOutlet weak var octalLabel: UILabel!
     
-    @IBOutlet weak var ten: UILabel!
+    @IBOutlet weak var decimalLabel: UILabel!
     
-    @IBOutlet weak var sixteen: UILabel!
+    @IBOutlet weak var hexadecimalLabel: UILabel!
     
     @IBOutlet weak var bannerView1: GADBannerView!
     
     @IBOutlet weak var bannerView2: GADBannerView!
-    
-    var Two = ""
-    var Eight = ""
-    var Sixteen = ""
-    var sixteenString = ""
 
     var version = ""
     
     var sumString = ""
-    var result = 0
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,95 +37,102 @@ class Change10ViewController: UIViewController {
 //        bannerView2.adUnitID = "ca-app-pub-6004781963877348/2431934795"
 //        bannerView2.rootViewController = self
 //        bannerView2.load(GADRequest())
+        print("aaaa\(sumString)")
+        getDecimal()
         
-        get10(string: version)
+    }
+    
+    func getDecimal(){
         
-    }
-    
-    func get10(string:String){
-        if string == "2"{
-            twoToTen(string: sumString)
-        }else if string == "8"{
-            eightToTen(string: sumString)
-        }else if string == "10"{
-            result = Int(sumString)!
-            tenToTwo(int: result)
-            two.text = "\(Two)"
-            tenToEight(int: result)
-            eight.text = "\(Eight)"
-            ten.text = sumString
-            tenToSixteen(int: result)
-            sixteen.text = "\(sixteenString)"
-        }else if string == "16"{
-            sixteenToTen(string: sumString)
+        switch version{
+        case "2":
+            let decimal = twoToTen(number: sumString)
+            binaryLabel.text = sumString
+            octalLabel.text = tenToEight(number: decimal)
+            decimalLabel.text = String(decimal)
+            hexadecimalLabel.text = tenToSixteen(number: decimal)
+        case "8":
+            let decimal = eightToTen(number: sumString)
+            binaryLabel.text = tenToTwo(number: decimal)
+            octalLabel.text = sumString
+            decimalLabel.text = String(decimal)
+            hexadecimalLabel.text = tenToSixteen(number: decimal)
+        case "10":
+            binaryLabel.text = tenToTwo(number: Int(sumString)!)
+            octalLabel.text = tenToEight(number: Int(sumString)!)
+            decimalLabel.text = sumString
+            hexadecimalLabel.text = tenToSixteen(number: Int(sumString)!)
+        case "16":
+            let decimal = sixteenToTen(number: sumString)
+            binaryLabel.text = tenToTwo(number: decimal)
+            octalLabel.text = tenToEight(number: decimal)
+            decimalLabel.text = String(decimal)
+            hexadecimalLabel.text = sumString
+        default:
+            print("errer")
         }
     }
     
-    func twoToTen(string:String){
-        var sum = Int(string)!
+    func twoToTen(number:String) -> Int{
+        var decimal = Int(number)!
         var base = 1
-        while(sum > 0){
-            result = result + (sum % 10) * base
-            sum = sum / 10
-            base = base * 2
+        var result = 0
+        while(decimal > 0){
+            result = result + (decimal % 10) * base
+            decimal /= 10
+            base *= 2
         }
-        tenToTwo(int: result)
-        two.text = "\(Two)"
-        tenToEight(int: result)
-        eight.text = "\(Eight)"
-        ten.text = "\(result)"
-        tenToSixteen(int: result)
-        sixteen.text = "\(sixteenString)"
+        return result
     }
     
-    func eightToTen(string:String){
-        var sum = Int(string)!
+    func eightToTen(number:String) -> Int{
+        var octal = Int(number)!
         var base = 1
-        while(sum > 0){
-            result = result + (sum % 10) * base
-            sum = sum / 10
-            base = base * 8
+        var result = 0
+        while(octal > 0){
+            result = result + (octal % 10) * base
+            octal /= 10
+            base *= 8
         }
-        tenToTwo(int: result)
-        two.text = "\(Two)"
-        tenToEight(int: result)
-        eight.text = "\(Eight)"
-        ten.text = "\(result)"
-        tenToSixteen(int: result)
-        sixteen.text = "\(sixteenString)"
+        return result
     }
     
-    func sixteenToTen(string:String){
-        var sum = Int(string)!
+    func sixteenToTen(number:String) -> Int{
+        let result = (Int(number, radix: 16))!
+        return result
+    }
+    
+    
+    func tenToTwo(number:Int) -> String{
+        var binary = Int(number)
         var base = 1
-        while(sum > 0){
-            result = result + (sum % 10) * base
-            sum = sum / 10
-            base = base * 16
+        var result = 0
+        while(binary > 0){
+            result = result + (binary % 2) * base
+            binary /= 2
+            base *= 10
         }
-        tenToTwo(int: result)
-        two.text = "\(Two)"
-        tenToEight(int: result)
-        eight.text = "\(Eight)"
-        ten.text = "\(result)"
-        tenToSixteen(int: result)
-        sixteen.text = "\(sixteenString)"
+        return String(result)
     }
     
-    func tenToTwo(int:Int){
-        let sum = int
-        Two = String(sum,radix: 2)
+    func tenToEight(number:Int) -> String{
+        var binary = Int(number)
+        var base = 1
+        var result = 0
+        while(binary > 0){
+            result = result + (binary % 8) * base
+            binary /= 8
+            base *= 10
+        }
+        return String(result)
     }
     
-    func tenToEight(int:Int){
-        let sum = int
-        Eight = String(sum,radix: 8)
+    func tenToSixteen(number:Int) -> String{
+        let result = String(number, radix: 16)
+        return String(result)
     }
     
-    func tenToSixteen(int:Int){
-        let sum = int
-        sixteenString = String(sum,radix: 16)
-    }
+    
     
     @IBAction func back(_ sender: Any) {
         dismiss(animated: true, completion: nil)
